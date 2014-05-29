@@ -25,7 +25,7 @@ You need to have a Mailchimp API KEY and a List ID configured:
 
 #### Add into config/application.rb
 
-`config.active_record.observers = 'CatarseMonkeyMail::MonkeyProjectObserver'`
+`config.active_record.observers = 'CatarseMonkeymail::MonkeyProjectObserver'`
 
 #### Add theses configurations:
 
