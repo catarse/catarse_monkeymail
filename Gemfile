@@ -1,14 +1,8 @@
 source "https://rubygems.org"
 
-# Declare your gem's dependencies in catarse_monkeymail.gemspec.
-# Bundler will treat runtime dependencies like base dependencies, and
-# development dependencies will be added by default to the :development group.
+gemfile_url = File.join(File.dirname(__FILE__), 'spec/dummy/Gemfile')
+gemfile_content = File.open(gemfile_url, "rb")  { |f| f.read }
+eval_gemfile gemfile_url, gemfile_content.gsub(/(gem 'catarse_monkeymail'.+)/, '')
+
 gemspec
 
-# Declare any dependencies that are still in development here instead of in
-# your gemspec. These might include edge Rails or gems from your path or
-# Git. Remember to move these dependencies to your gemspec before releasing
-# your gem to rubygems.org.
-
-# To use debugger
-# gem 'debugger'
