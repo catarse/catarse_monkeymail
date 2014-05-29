@@ -5,6 +5,7 @@ module CatarseMonkeymail
     initializer 'include modules' do
       ::ApplicationController.send(:include, CatarseMonkeymail::ControllerConcerns)
       ::User.send(:include, CatarseMonkeymail::UserConcern)
+      ::Project.send(:include, CatarseMonkeymail::ProjectConcern)
     end
   end
 end
