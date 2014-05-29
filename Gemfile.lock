@@ -28,7 +28,7 @@ GIT
 PATH
   remote: .
   specs:
-    catarse_monkeymail (0.0.1)
+    catarse_monkeymail (0.1.0)
       mailchimp-api (~> 2.0.4)
       rails (~> 4.0.3)
 
