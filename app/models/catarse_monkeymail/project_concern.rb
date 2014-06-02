@@ -7,14 +7,18 @@ module CatarseMonkeymail::ProjectConcern
     end
 
     def subscribe_owner_to_success_list
-      subscribe_to_list ::CatarseSettings[:mailchimp_successful_projects_list]
+      subscribe_to_list monkey_settings[:mailchimp_successful_projects_list]
     end
 
     def subscribe_owner_to_failed_list
-      subscribe_to_list ::CatarseSettings[:mailchimp_failed_projects_list]
+      subscribe_to_list monkey_settings[:mailchimp_failed_projects_list]
     end
 
     private
+
+    def monkey_settings
+      ::CatarseMonkeymail.configurations.settings
+    end
 
     def subscribe_to_list list_id
       mailchimp.lists.subscribe list_id, { email: self.user.email }, subscriber_args
