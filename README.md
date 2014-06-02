@@ -14,22 +14,14 @@ or
 `gem install catarse_monkeymail`
 
 
-You need to have a Mailchimp API KEY and a List ID configured:
-
-`CatarseSettings[:mailchimp_api_key] = 'YOUR_API_KEY'`
-
-`CatarseSettings[:mailchimp_list_id] = 'YOUR_NEWSLETTER_LIST_ID'`
-
-`CatarseSettings[:mailchimp_successful_projects_list] = 'YOUR_PROJECT_SUCCESSFUL_LIST_ID'`
-
-`CatarseSettings[:mailchimp_failed_projects_list] = 'YOUR_PROJECT_FAILED_LIST_ID'`
-
-
 #### Create a config/initializers/monkeymail.rb and put
 
 ~~~
   CatarseMonkeymail.configure do |config|
-    config.settings = YouSettingsClass
+    config.mailchimp_api_key = 'YOUR_API_KEY'
+    config.mailchimp_list_id = 'YOUR_NEWSLETTER_LIST_ID'
+    config.mailchimp_successful_projects_list = 'YOUR_PROJECT_SUCCESSFUL_LIST_ID'
+    config.mailchimp_failed_projects_list = 'YOUR_PROJECT_FAILED_LIST_ID'
   end
 ~~~
 

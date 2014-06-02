@@ -1,9 +1,12 @@
 module CatarseMonkeymail
   class Configuration
-    attr_accessor :settings
+    attr_accessor :api_key, :list_id, :successful_projects_list, :failed_projects_list
 
     def inititalizer
-      @settings = ::CatarseSettings
+      @api_key = ''
+      @list_id = ''
+      @successful_projects_list = ''
+      @failed_projects_list = ''
     end
   end
 end
