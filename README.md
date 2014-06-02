@@ -1,6 +1,6 @@
 # CatarseMonkeymail
 
-Mailchimp 2.0 integration for Catarse[http://github.com/catarse/catarse]
+Mailchimp 2.0 integration for [Catarse](http://github.com/catarse/catarse)
 
 
 ## Installation
@@ -27,11 +27,11 @@ You need to have a Mailchimp API KEY and a List ID configured:
 
 #### Create a config/initializers/monkeymail.rb and put
 
-`
+~~~
   CatarseMonkeymail.configure do |config|
     config.settings = YouSettingsClass
   end
-`
+~~~
 
 by default we use the `::CatarseSettings` class
 
