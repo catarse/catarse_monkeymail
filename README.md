@@ -18,10 +18,10 @@ or
 
 ~~~
   CatarseMonkeymail.configure do |config|
-    config.mailchimp_api_key = 'YOUR_API_KEY'
-    config.mailchimp_list_id = 'YOUR_NEWSLETTER_LIST_ID'
-    config.mailchimp_successful_projects_list = 'YOUR_PROJECT_SUCCESSFUL_LIST_ID'
-    config.mailchimp_failed_projects_list = 'YOUR_PROJECT_FAILED_LIST_ID'
+    config.api_key = 'YOUR_API_KEY'
+    config.list_id = 'YOUR_NEWSLETTER_LIST_ID'
+    config.successful_projects_list = 'YOUR_PROJECT_SUCCESSFUL_LIST_ID'
+    config.failed_projects_list = 'YOUR_PROJECT_FAILED_LIST_ID'
   end
 ~~~
 
