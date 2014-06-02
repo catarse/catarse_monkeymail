@@ -25,8 +25,6 @@ or
   end
 ~~~
 
-by default we use the `::CatarseSettings` class
-
 
 #### Add into config/application.rb
 
