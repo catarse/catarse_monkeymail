@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_dependency "rails", "~> 4.0.3"
+  s.add_dependency "rails", ">= 4.0.3"
   s.add_dependency "mailchimp-api", "~> 2.0.4"
 
   s.add_development_dependency "sqlite3"
