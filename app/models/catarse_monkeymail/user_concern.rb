@@ -5,16 +5,16 @@ module CatarseMonkeymail::UserConcern
 
     before_save do
       if self.newsletter_changed? && self.newsletter
-        return subscribe_to_newsletter_list
+        subscribe_to_newsletter_list
       end
 
       if self.newsletter && self.email_changed? && !self.new_record?
         unsubscribe_from_newsletter_list self.email_was
-        return subscribe_to_newsletter_list
+        subscribe_to_newsletter_list
       end
 
       if self.newsletter_changed? && !self.newsletter
-        return unsubscribe_from_newsletter_list
+        unsubscribe_from_newsletter_list
       end
     end
 
