@@ -8,17 +8,17 @@ describe User do
     end
 
     context "when user want to receive a newsletter" do
-      let(:user) { User.new(true) }
+      let(:user) { User.new(newsletter: true) }
 
       before do
         expect(user).to receive(:subscribe_to_newsletter_list)
       end
 
-      it { user.save }
+      it { user.save! }
     end
 
     context "when user want to receive a newsletter but he changed they email" do
-      let(:user) { User.new(true, 'foo@bar.com') }
+      let(:user) { User.create!(newsletter: true, email: 'foo@bar.com') }
 
       before do
         expect(user).to receive(:subscribe_to_newsletter_list)
@@ -35,11 +35,11 @@ describe User do
         expect(user).to_not receive(:subscribe_to_newsletter_list)
       end
 
-      it { user.save }
+      it { user.save! }
     end
 
     context "when user want to not receive newsletter anymore" do
-      let(:user) { User.new(true, 'foo@bar.com') }
+      let(:user) { User.create!(newsletter: true, email: 'foo@bar.com') }
 
       before do
         expect(user).to_not receive(:subscribe_to_newsletter_list)

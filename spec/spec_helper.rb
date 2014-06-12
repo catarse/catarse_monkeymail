@@ -20,7 +20,7 @@ Project.observers = CatarseMonkeymail::MonkeyProjectObserver
 Project.instantiate_observers
 
 RSpec.configure do |config|
-  config.use_transactional_examples = false
+  config.use_transactional_examples = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of

@@ -2,7 +2,6 @@ module CatarseMonkeymail::UserConcern
   extend ActiveSupport::Concern
 
   included do
-
     before_save do
       if self.newsletter_changed? && self.newsletter
         subscribe_to_newsletter_list
