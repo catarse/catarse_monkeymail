@@ -7,7 +7,7 @@ describe Project do
   end
 
   context "when project is successful" do
-    let(:project) { create(:project, state: 'waiting_funds', goal: 10, online_days: -10, online_date: 20.days.ago ) }
+    let(:project) { Project.new 'waiting_funds', 10, -10, 20.days.ago }
 
     before do
       project.stub(:pledged).and_return(30)
@@ -20,7 +20,7 @@ describe Project do
   end
 
   context "when project is failed" do
-    let(:project) { create(:project, state: 'waiting_funds', goal: 10, online_days: -10, online_date: 20.days.ago ) }
+    let(:project) { Project.new 'waiting_funds', 10, -10, 20.days.ago }
 
     before do
       project.should_not_receive(:subscribe_owner_to_success_list)
