@@ -1,4 +1,6 @@
-Project = Struct.new(:state, :goal, :online_days, :online_date) do
-  def finish
-  end
+class Project
+  include ActiveModel::Model
+  include ActiveModel::Observing
+
+  attr_accessor :state, :goal, :online_days, :online_date
 end

@@ -7,7 +7,7 @@ describe Project do
   end
 
   context "when project is successful" do
-    let(:project) { Project.new 'waiting_funds', 10, -10, 20.days.ago }
+    let(:project) { Project.new }
 
     before do
       allow(project).to receive(:pledged){ 30 }
@@ -16,17 +16,17 @@ describe Project do
       expect(project).to_not receive(:subscribe_owner_to_failed_list)
     end
 
-    it { project.finish }
+    it("should receive subscribe_owner_to_success_list"){ project.notify_observers :from_online_to_successful }
   end
 
   context "when project is failed" do
-    let(:project) { Project.new 'waiting_funds', 10, -10, 20.days.ago }
+    let(:project) { Project.new }
 
     before do
       expect(project).to_not receive(:subscribe_owner_to_success_list)
       expect(project).to receive(:subscribe_owner_to_failed_list)
     end
 
-    it { project.finish }
+    it("should receive subscribe_owner_to_failed_list"){ project.notify_observers :from_online_to_failed }
   end
 end
