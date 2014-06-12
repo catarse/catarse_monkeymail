@@ -4,7 +4,11 @@ describe CatarseMonkeymail::ControllerConcerns do
   let(:fake_controller){ ApplicationController.new }
 
   describe "#mailchimp" do
+    before do
+      expect(::Mailchimp::API).to receive(:new).with(::CatarseMonkeymail.configuration.api_key).and_return('fake api')
+    end
+
     subject{ fake_controller.mailchimp }
-    it{ should_not be_nil }
+    it{ should eq 'fake api' }
   end
 end
