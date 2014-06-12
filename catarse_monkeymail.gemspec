@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 4.0.3"
   s.add_dependency "mailchimp-api", "~> 2.0.4"
+  s.add_dependency "rails-observers"
 
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "pg"
