@@ -1,12 +1,13 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 
+require 'support/user'
+require 'support/project'
+
 require File.expand_path("../dummy/config/environment", __FILE__)
 
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'database_cleaner'
-require 'shoulda'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -14,20 +15,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
   config.use_transactional_examples = false
-
-  config.before(:suite) do
-    DatabaseCleaner.clean_with :truncation
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.start
-    ActionMailer::Base.deliveries.clear
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
