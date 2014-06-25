@@ -21,7 +21,7 @@ module CatarseMonkeymail::ProjectConcern
     end
 
     def subscribe_to_list(list_id)
-      mailchimp.lists.subscribe list_id, { email: self.user.email }, subscriber_args
+      mailchimp.lists.subscribe(list_id, { email: self.user.email }, subscriber_args) rescue nil
     end
 
     def subscriber_args

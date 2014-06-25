@@ -22,11 +22,11 @@ module CatarseMonkeymail::UserConcern
     end
 
     def subscribe_to_newsletter_list
-      mailchimp.lists.subscribe monkey_settings.list_id, { email: self.email }, { name: self.name }
+      mailchimp.lists.subscribe(monkey_settings.list_id, { email: self.email }, { name: self.name }) rescue nil
     end
 
     def unsubscribe_from_newsletter_list email_arg = self.email
-      mailchimp.lists.unsubscribe monkey_settings.list_id, { email: email_arg }
+      mailchimp.lists.unsubscribe(monkey_settings.list_id, { email: email_arg }) rescue nil
     end
 
     private
