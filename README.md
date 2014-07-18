@@ -1,4 +1,4 @@
-# CatarseMonkeymail
+# CatarseMonkeymail [![Code Climate](https://codeclimate.com/github/catarse/catarse_monkeymail.png)](https://codeclimate.com/github/catarse/catarse_monkeymail)
 
 Mailchimp 2.0 integration for [Catarse](http://github.com/catarse/catarse)
 
